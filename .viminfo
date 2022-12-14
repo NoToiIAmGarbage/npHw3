@@ -13,13 +13,18 @@
 # Last Search Pattern:
 ~MSle0~/loginNum
 
+# Last Substitute String:
+$
+
 # Command Line History (newest to oldest):
+:wq
+|2,0,1671021125,,"wq"
+:151
+|2,0,1671020875,,"151"
+:q
+|2,0,1671020856,,"q"
 :w
 |2,0,1671011180,,"w"
-:q
-|2,0,1671010849,,"q"
-:wq
-|2,0,1671010745,,"wq"
 :set tabstop=4
 |2,0,1671009502,,"set tabstop=4"
 :5
@@ -54,6 +59,8 @@
 |2,0,1670945466,,"fq"
 
 # Search String History (newest to oldest):
+? @$
+|2,1,1671020852,,"@$"
 ?/loginNum
 |2,1,1671009689,47,"loginNum"
 ?/update
@@ -75,274 +82,273 @@
 
 # Registers:
 "0	LINE	0
-	    Aws::S3::S3Client client(clientConfig);
-	
-|3,0,0,1,2,0,1671009170,"    Aws::S3::S3Client client(clientConfig);",""
-""1	LINE	0
+	g++ -std=c++17 server.cpp -o ./build/server
+|3,0,0,1,1,0,1671020852,"g++ -std=c++17 server.cpp -o ./build/server"
+"1	LINE	0
+			s3_client.PutObject(request);
+|3,0,1,1,1,0,1671020961,"		s3_client.PutObject(request);"
+"2	LINE	0
+	g++ -std=c++17 server.cpp -o ./build/server
+|3,0,2,1,1,0,1671020786,"g++ -std=c++17 server.cpp -o ./build/server"
+"3	LINE	0
 	793
 <		Aws::S3::Model::GetObjectOutcome outcome =                                                                                                  client.GetObject(request);                                                                                                                                                                                                                          Aws::IOStream& body = outcome.GetResult().GetBody();                                                                                                                                                                                                            for(int i = 0; i < 3; i ++) {                                                                                                           body >> logi
-|3,1,1,1,1,0,1671010995,>792
+|3,0,3,1,1,0,1671010995,>792
 |<"		Aws::S3::Model::GetObjectOutcome outcome =                                                                                                  client.GetObject(request);                                                                                                                                                                                                                          Aws::IOStream& body = outcome.GetResult().GetBody();                                                    
 |<                                                                                                                                                        for(int i = 0; i < 3; i ++) {                                                                                                           body >> logi"
-"2	LINE	0
-	
-|3,0,2,1,1,0,1671010582,""
-"3	LINE	0
-	    }
-|3,0,3,1,1,0,1671010582,"    }"
 "4	LINE	0
-	                  << objectContent << "' uploaded to bucket '" << bucketName << "'.";
-|3,0,4,1,1,0,1671010581,"                  << objectContent << \"' uploaded to bucket '\" << bucketName << \"'.\";"
+	
+|3,0,4,1,1,0,1671010582,""
 "5	LINE	0
-	        std::cout << "Success: Object '" << objectName << "' with content '"
-|3,0,5,1,1,0,1671010581,"        std::cout << \"Success: Object '\" << objectName << \"' with content '\""
-"6	LINE	0
-	    else {
-|3,0,6,1,1,0,1671010580,"    else {"
-"7	LINE	0
 	    }
-|3,0,7,1,1,0,1671010580,"    }"
+|3,0,5,1,1,0,1671010582,"    }"
+"6	LINE	0
+	                  << objectContent << "' uploaded to bucket '" << bucketName << "'.";
+|3,0,6,1,1,0,1671010581,"                  << objectContent << \"' uploaded to bucket '\" << bucketName << \"'.\";"
+"7	LINE	0
+	        std::cout << "Success: Object '" << objectName << "' with content '"
+|3,0,7,1,1,0,1671010581,"        std::cout << \"Success: Object '\" << objectName << \"' with content '\""
 "8	LINE	0
-	                  outcome.GetError().GetMessage() << std::endl;
-|3,0,8,1,1,0,1671010580,"                  outcome.GetError().GetMessage() << std::endl;"
+	    else {
+|3,0,8,1,1,0,1671010580,"    else {"
 "9	LINE	0
-	        std::cerr << "Error: PutObjectBuffer: " <<
-|3,0,9,1,1,0,1671010579,"        std::cerr << \"Error: PutObjectBuffer: \" <<"
-"-	CHAR	0
-	 
-|3,0,36,0,1,0,1671010738," "
+	    }
+|3,0,9,1,1,0,1671010580,"    }"
+""-	CHAR	0
+	c
+|3,1,36,0,1,0,1671021041,"c"
 
 # File marks:
-'0  189  1  ~/server.cpp
-|4,48,189,1,1671011472,"~/server.cpp"
-'1  20  28  ~/myApp/test.cpp
-|4,49,20,28,1671010849,"~/myApp/test.cpp"
-'2  20  28  ~/myApp/test.cpp
-|4,50,20,28,1671010849,"~/myApp/test.cpp"
-'3  20  10  ~/myApp/test.cpp
-|4,51,20,10,1671010745,"~/myApp/test.cpp"
-'4  20  10  ~/myApp/test.cpp
-|4,52,20,10,1671010745,"~/myApp/test.cpp"
-'5  20  27  ~/myApp/test.cpp
-|4,53,20,27,1671010724,"~/myApp/test.cpp"
-'6  20  27  ~/myApp/test.cpp
-|4,54,20,27,1671010724,"~/myApp/test.cpp"
-'7  20  27  ~/myApp/test.cpp
-|4,55,20,27,1671010724,"~/myApp/test.cpp"
-'8  20  27  ~/myApp/test.cpp
-|4,56,20,27,1671010724,"~/myApp/test.cpp"
-'9  4  41  ~/myApp/test.cpp
-|4,57,4,41,1671010670,"~/myApp/test.cpp"
+'0  151  16  ~/server.cpp
+|4,48,151,16,1671021125,"~/server.cpp"
+'1  151  108  ~/server.cpp
+|4,49,151,108,1671021006,"~/server.cpp"
+'2  149  7  ~/server.cpp
+|4,50,149,7,1671020900,"~/server.cpp"
+'3  149  7  ~/server.cpp
+|4,51,149,7,1671020900,"~/server.cpp"
+'4  149  7  ~/server.cpp
+|4,52,149,7,1671020900,"~/server.cpp"
+'5  149  7  ~/server.cpp
+|4,53,149,7,1671020900,"~/server.cpp"
+'6  8  3  ~/build.sh
+|4,54,8,3,1671020868,"~/build.sh"
+'7  8  0  ~/build
+|4,55,8,0,1671020856,"~/build"
+'8  8  0  ~/build.sh
+|4,56,8,0,1671020788,"~/build.sh"
+'9  189  1  ~/server.cpp
+|4,57,189,1,1671011472,"~/server.cpp"
 
 # Jumplist (newest first):
+-'  151  16  ~/server.cpp
+|4,39,151,16,1671021125,"~/server.cpp"
+-'  151  108  ~/server.cpp
+|4,39,151,108,1671021006,"~/server.cpp"
+-'  149  7  ~/server.cpp
+|4,39,149,7,1671020922,"~/server.cpp"
+-'  149  7  ~/server.cpp
+|4,39,149,7,1671020922,"~/server.cpp"
+-'  149  7  ~/server.cpp
+|4,39,149,7,1671020900,"~/server.cpp"
+-'  189  1  ~/server.cpp
+|4,39,189,1,1671020872,"~/server.cpp"
+-'  189  1  ~/server.cpp
+|4,39,189,1,1671020872,"~/server.cpp"
+-'  189  1  ~/server.cpp
+|4,39,189,1,1671020872,"~/server.cpp"
+-'  8  3  ~/build.sh
+|4,39,8,3,1671020868,"~/build.sh"
+-'  8  3  ~/build.sh
+|4,39,8,3,1671020868,"~/build.sh"
+-'  8  3  ~/build.sh
+|4,39,8,3,1671020868,"~/build.sh"
+-'  8  3  ~/build.sh
+|4,39,8,3,1671020868,"~/build.sh"
+-'  8  3  ~/build.sh
+|4,39,8,3,1671020868,"~/build.sh"
+-'  8  3  ~/build.sh
+|4,39,8,3,1671020868,"~/build.sh"
+-'  8  3  ~/build.sh
+|4,39,8,3,1671020868,"~/build.sh"
+-'  8  3  ~/build.sh
+|4,39,8,3,1671020868,"~/build.sh"
+-'  8  0  ~/build
+|4,39,8,0,1671020856,"~/build"
+-'  8  0  ~/build
+|4,39,8,0,1671020856,"~/build"
+-'  8  0  ~/build
+|4,39,8,0,1671020856,"~/build"
+-'  8  0  ~/build
+|4,39,8,0,1671020856,"~/build"
+-'  8  0  ~/build
+|4,39,8,0,1671020856,"~/build"
+-'  8  0  ~/build
+|4,39,8,0,1671020856,"~/build"
+-'  8  0  ~/build
+|4,39,8,0,1671020856,"~/build"
+-'  8  0  ~/build
+|4,39,8,0,1671020856,"~/build"
+-'  8  0  ~/build
+|4,39,8,0,1671020856,"~/build"
+-'  8  0  ~/build
+|4,39,8,0,1671020856,"~/build"
+-'  8  0  ~/build
+|4,39,8,0,1671020856,"~/build"
+-'  8  0  ~/build
+|4,39,8,0,1671020856,"~/build"
+-'  8  0  ~/build
+|4,39,8,0,1671020856,"~/build"
+-'  8  0  ~/build
+|4,39,8,0,1671020856,"~/build"
+-'  8  0  ~/build
+|4,39,8,0,1671020856,"~/build"
+-'  8  0  ~/build
+|4,39,8,0,1671020856,"~/build"
+-'  8  0  ~/build.sh
+|4,39,8,0,1671020788,"~/build.sh"
+-'  8  0  ~/build.sh
+|4,39,8,0,1671020788,"~/build.sh"
+-'  8  0  ~/build.sh
+|4,39,8,0,1671020788,"~/build.sh"
+-'  8  0  ~/build.sh
+|4,39,8,0,1671020788,"~/build.sh"
+-'  8  0  ~/build.sh
+|4,39,8,0,1671020788,"~/build.sh"
+-'  8  0  ~/build.sh
+|4,39,8,0,1671020788,"~/build.sh"
+-'  8  0  ~/build.sh
+|4,39,8,0,1671020788,"~/build.sh"
+-'  8  0  ~/build.sh
+|4,39,8,0,1671020788,"~/build.sh"
+-'  8  0  ~/build.sh
+|4,39,8,0,1671020788,"~/build.sh"
+-'  8  0  ~/build.sh
+|4,39,8,0,1671020788,"~/build.sh"
+-'  8  0  ~/build.sh
+|4,39,8,0,1671020788,"~/build.sh"
+-'  8  0  ~/build.sh
+|4,39,8,0,1671020788,"~/build.sh"
+-'  8  0  ~/build.sh
+|4,39,8,0,1671020788,"~/build.sh"
+-'  8  0  ~/build.sh
+|4,39,8,0,1671020788,"~/build.sh"
+-'  8  0  ~/build.sh
+|4,39,8,0,1671020788,"~/build.sh"
+-'  8  0  ~/build.sh
+|4,39,8,0,1671020788,"~/build.sh"
+-'  1  0  ~/build.sh
+|4,39,1,0,1671020717,"~/build.sh"
+-'  1  0  ~/build.sh
+|4,39,1,0,1671020717,"~/build.sh"
+-'  1  0  ~/build.sh
+|4,39,1,0,1671020717,"~/build.sh"
+-'  1  0  ~/build.sh
+|4,39,1,0,1671020717,"~/build.sh"
+-'  1  0  ~/build.sh
+|4,39,1,0,1671020717,"~/build.sh"
+-'  1  0  ~/build.sh
+|4,39,1,0,1671020717,"~/build.sh"
+-'  1  0  ~/build.sh
+|4,39,1,0,1671020717,"~/build.sh"
+-'  1  0  ~/build.sh
+|4,39,1,0,1671020717,"~/build.sh"
+-'  1  0  ~/build.sh
+|4,39,1,0,1671020717,"~/build.sh"
+-'  1  0  ~/build.sh
+|4,39,1,0,1671020717,"~/build.sh"
+-'  1  0  ~/build.sh
+|4,39,1,0,1671020717,"~/build.sh"
+-'  1  0  ~/build.sh
+|4,39,1,0,1671020717,"~/build.sh"
+-'  1  0  ~/build.sh
+|4,39,1,0,1671020717,"~/build.sh"
+-'  1  0  ~/build.sh
+|4,39,1,0,1671020717,"~/build.sh"
+-'  1  0  ~/build.sh
+|4,39,1,0,1671020717,"~/build.sh"
+-'  1  0  ~/build.sh
+|4,39,1,0,1671020717,"~/build.sh"
+-'  1  0  ~/build.sh
+|4,39,1,0,1671020717,"~/build.sh"
+-'  1  0  ~/build.sh
+|4,39,1,0,1671020717,"~/build.sh"
+-'  1  0  ~/build.sh
+|4,39,1,0,1671020717,"~/build.sh"
+-'  1  0  ~/build.sh
+|4,39,1,0,1671020717,"~/build.sh"
+-'  1  0  ~/build.sh
+|4,39,1,0,1671020717,"~/build.sh"
+-'  1  0  ~/build.sh
+|4,39,1,0,1671020717,"~/build.sh"
+-'  1  0  ~/build.sh
+|4,39,1,0,1671020717,"~/build.sh"
+-'  1  0  ~/build.sh
+|4,39,1,0,1671020717,"~/build.sh"
+-'  189  1  ~/server.cpp
+|4,39,189,1,1671011472,"~/server.cpp"
+-'  189  1  ~/server.cpp
+|4,39,189,1,1671011472,"~/server.cpp"
+-'  189  1  ~/server.cpp
+|4,39,189,1,1671011472,"~/server.cpp"
+-'  189  1  ~/server.cpp
+|4,39,189,1,1671011472,"~/server.cpp"
+-'  189  1  ~/server.cpp
+|4,39,189,1,1671011472,"~/server.cpp"
+-'  189  1  ~/server.cpp
+|4,39,189,1,1671011472,"~/server.cpp"
+-'  189  1  ~/server.cpp
+|4,39,189,1,1671011472,"~/server.cpp"
 -'  189  1  ~/server.cpp
 |4,39,189,1,1671011472,"~/server.cpp"
 -'  135  1691  ~/server.cpp
 |4,39,135,1691,1671010888,"~/server.cpp"
+-'  135  1691  ~/server.cpp
+|4,39,135,1691,1671010888,"~/server.cpp"
+-'  135  1691  ~/server.cpp
+|4,39,135,1691,1671010888,"~/server.cpp"
+-'  135  1691  ~/server.cpp
+|4,39,135,1691,1671010888,"~/server.cpp"
+-'  135  1691  ~/server.cpp
+|4,39,135,1691,1671010888,"~/server.cpp"
+-'  135  1691  ~/server.cpp
+|4,39,135,1691,1671010888,"~/server.cpp"
+-'  135  1691  ~/server.cpp
+|4,39,135,1691,1671010888,"~/server.cpp"
+-'  135  1691  ~/server.cpp
+|4,39,135,1691,1671010888,"~/server.cpp"
+-'  135  1691  ~/server.cpp
+|4,39,135,1691,1671010888,"~/server.cpp"
+-'  135  1691  ~/server.cpp
+|4,39,135,1691,1671010888,"~/server.cpp"
+-'  135  1691  ~/server.cpp
+|4,39,135,1691,1671010888,"~/server.cpp"
 -'  132  0  ~/server.cpp
 |4,39,132,0,1671010855,"~/server.cpp"
--'  20  28  ~/myApp/test.cpp
-|4,39,20,28,1671010849,"~/myApp/test.cpp"
--'  20  28  ~/myApp/test.cpp
-|4,39,20,28,1671010849,"~/myApp/test.cpp"
--'  20  10  ~/myApp/test.cpp
-|4,39,20,10,1671010745,"~/myApp/test.cpp"
--'  20  27  ~/myApp/test.cpp
-|4,39,20,27,1671010724,"~/myApp/test.cpp"
--'  4  41  ~/myApp/test.cpp
-|4,39,4,41,1671010672,"~/myApp/test.cpp"
--'  4  41  ~/myApp/test.cpp
-|4,39,4,41,1671010672,"~/myApp/test.cpp"
--'  4  41  ~/myApp/test.cpp
-|4,39,4,41,1671010672,"~/myApp/test.cpp"
--'  4  41  ~/myApp/test.cpp
-|4,39,4,41,1671010672,"~/myApp/test.cpp"
--'  4  41  ~/myApp/test.cpp
-|4,39,4,41,1671010670,"~/myApp/test.cpp"
--'  27  4  ~/myApp/test.cpp
-|4,39,27,4,1671010600,"~/myApp/test.cpp"
--'  26  4  ~/myApp/test.cpp
-|4,39,26,4,1671010600,"~/myApp/test.cpp"
--'  27  4  ~/myApp/test.cpp
-|4,39,27,4,1671010600,"~/myApp/test.cpp"
--'  26  4  ~/myApp/test.cpp
-|4,39,26,4,1671010600,"~/myApp/test.cpp"
--'  27  4  ~/myApp/test.cpp
-|4,39,27,4,1671010600,"~/myApp/test.cpp"
--'  26  4  ~/myApp/test.cpp
-|4,39,26,4,1671010600,"~/myApp/test.cpp"
--'  27  4  ~/myApp/test.cpp
-|4,39,27,4,1671010600,"~/myApp/test.cpp"
--'  26  4  ~/myApp/test.cpp
-|4,39,26,4,1671010600,"~/myApp/test.cpp"
--'  25  4  ~/myApp/test.cpp
-|4,39,25,4,1671010587,"~/myApp/test.cpp"
--'  25  4  ~/myApp/test.cpp
-|4,39,25,4,1671010587,"~/myApp/test.cpp"
--'  25  4  ~/myApp/test.cpp
-|4,39,25,4,1671010587,"~/myApp/test.cpp"
--'  26  4  ~/myApp/test.cpp
-|4,39,26,4,1671010587,"~/myApp/test.cpp"
--'  25  4  ~/myApp/test.cpp
-|4,39,25,4,1671010587,"~/myApp/test.cpp"
--'  28  0  ~/myApp/test.cpp
-|4,39,28,0,1671010569,"~/myApp/test.cpp"
--'  28  0  ~/myApp/test.cpp
-|4,39,28,0,1671010569,"~/myApp/test.cpp"
--'  28  0  ~/myApp/test.cpp
-|4,39,28,0,1671010569,"~/myApp/test.cpp"
--'  28  0  ~/myApp/test.cpp
-|4,39,28,0,1671010569,"~/myApp/test.cpp"
--'  27  0  ~/myApp/test.cpp
-|4,39,27,0,1671010569,"~/myApp/test.cpp"
--'  26  0  ~/myApp/test.cpp
-|4,39,26,0,1671010569,"~/myApp/test.cpp"
 -'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
+|4,39,132,0,1671010855,"~/server.cpp"
 -'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
+|4,39,132,0,1671010855,"~/server.cpp"
 -'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
+|4,39,132,0,1671010855,"~/server.cpp"
 -'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
+|4,39,132,0,1671010855,"~/server.cpp"
 -'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
+|4,39,132,0,1671010855,"~/server.cpp"
 -'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
+|4,39,132,0,1671010855,"~/server.cpp"
 -'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
+|4,39,132,0,1671010855,"~/server.cpp"
 -'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
--'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
--'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
--'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
--'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
--'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
--'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
--'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
--'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
--'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
--'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
--'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
--'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
--'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
--'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
--'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
--'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
--'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
--'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
--'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
--'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
--'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
--'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
--'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
--'  132  0  ~/server.cpp
-|4,39,132,0,1671010366,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  122  18  ~/server.cpp
-|4,39,122,18,1671009695,"~/server.cpp"
--'  810  5  ~/server.cpp
-|4,39,810,5,1671009691,"~/server.cpp"
--'  794  5  ~/server.cpp
-|4,39,794,5,1671009691,"~/server.cpp"
--'  794  5  ~/server.cpp
-|4,39,794,5,1671009691,"~/server.cpp"
--'  794  5  ~/server.cpp
-|4,39,794,5,1671009691,"~/server.cpp"
+|4,39,132,0,1671010855,"~/server.cpp"
 
 # History of marks within files (newest to oldest):
 
 > ~/server.cpp
-	*	1671011233	0
-	"	189	1
-	^	133	2
-	.	149	0
+	*	1671021124	0
+	"	151	16
+	^	151	17
+	.	132	16
 	+	1	0
 	+	117	3187
 	+	116	6
@@ -394,7 +400,26 @@
 	+	145	31
 	+	146	12
 	+	146	38
-	+	149	0
+	+	149	8
+	+	155	1
+	+	156	1
+	+	155	73
+	+	151	108
+	+	144	22
+	+	126	22
+	+	132	16
+
+> ~/build.sh
+	*	1671020867	0
+	"	8	3
+	^	8	4
+	.	8	4
+	+	8	56
+	+	9	43
+	+	8	43
+	+	8	145
+	+	9	0
+	+	8	4
 
 > ~/myApp/test.cpp
 	*	1671010828	0
@@ -481,10 +506,6 @@
 	+	4	41
 	+	19	51
 	+	20	28
-
-> ~/build.sh
-	*	1671007416	0
-	"	1	0
 
 > /usr/local/include/aws/s3/s3_client.h
 	*	1671003460	0

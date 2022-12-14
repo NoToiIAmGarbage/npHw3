@@ -3,6 +3,13 @@
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <unistd.h>
+
+#include <aws/core/Aws.h>
+#include <aws/s3/S3Client.h>
+#include <aws/s3/model/GetObjectRequest.h>
+#include <aws/s3/model/PutObjectRequest.h>
+#include <fstream>
+
 using namespace std;
 
 #define max_clients 30
@@ -116,13 +123,13 @@ class Connection {
 public:
 	void updateLoginNumber() {
 		Aws::Client::ClientConfiguration c;
-		Aws::S3::S3Client client(c);
+		Aws::S3::S3Client s3_client(c);
 		Aws::S3::Model::GetObjectRequest request;
 		request.SetBucket("nphw3bucket");
 		request.SetKey("loginNumber");
 
 		Aws::S3::Model::GetObjectOutcome outcome =
-		            client.GetObject(request);		
+		            s3_client.GetObject(request);
 
 		Aws::IOStream& body = outcome.GetResult().GetBody();
 
@@ -134,18 +141,18 @@ public:
 
 	void writeLoginNumber() {
 		Aws::Client::ClientConfiguration c;
-		Aws::S3::S3Client client(c);
-		Aws::S3::Model::GetObjectRequest request;
+		Aws::S3::S3Client s3_client(c);
+		Aws::S3::Model::PutObjectRequest request;
 		request.SetBucket("nphw3bucket");
 		request.SetKey("loginNumber"); 
 		
-		const sed::shared_ptr<Aws::IOStream> inputData = Aws::MakeShared<Aws::StringStream>("");
+		const shared_ptr<Aws::IOStream> inputData = Aws::MakeShared<Aws::StringStream>("");
 	
-		string objectContent = to_string(loginNum[0] + ' ' + loginNum[1] + ' ' + loginNum[2];
+		string objectContent = to_string(loginNum[0]) + ' ' + to_string(loginNum[1]) + ' ' + to_string(loginNum[2]);
 		cout << objectContent << '\n';
 		*inputData << objectContent.c_str();
 		request.SetBody(inputData);
-		Aws::S3::Model::PutObjectOutcome outcome = s3_client.PutObject(request);
+		Aws::S3::Model::PutObjectOutcome outcome = s3_client.PutObject(request);	
 	}
 	void process_register(vector<string> comm) {
 		if(comm.size() != 4) {
