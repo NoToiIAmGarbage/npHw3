@@ -197,6 +197,9 @@ public:
 		sendMes("Welcome, " + comm[1], ind);
 		state[ind] = comm[1];
 		user2state[comm[1]] = ind;
+		updateLoginNumber();
+		loginNum[1] ++;
+		writeLoginNumber();
 	}
 
 	void process_logout(int ind) {
@@ -212,6 +215,9 @@ public:
 		sendMes("Goodbye, " + state[ind], ind);
 		user2state[state[ind]] = -1;
 		state[ind] = "";
+		updateLoginNumber();
+		loginNum[1] --;
+		writeLoginNumber();
 	}
 
 	void process_create_public_room(vector<string> comm, int ind) {
@@ -568,6 +574,14 @@ public:
 		}
 	}
 
+	void process_status(int ind) {
+		string res;
+		for(int i = 0; i < 3; i ++) {
+			res += "Server" + to_string(i + 1) + ": " + to_string(loginNum[i]) + '\n';
+		}
+		sendMes(res, ind);
+	}
+
 	void process_command(string str, int ind = -1) {
 		auto comm = process_string(str);
 		if(ind == -1) {
@@ -622,6 +636,9 @@ public:
 		else if(comm[0] == "exit") {
 			process_exit(ind);
 		}
+		else if(comm[0] == "status") {
+			process_status(ind);
+		}
 		else {
 			sendMes("Not a valid command", ind);
 		}
@@ -630,6 +647,9 @@ public:
 	void process_exit(int ind) {
 		close(clients[ind]);
 		clients[ind] = -1;
+		updateLoginNumber();
+		loginNum[1] --;
+		writeLoginNumber();
 		// cerr << "Clients" << ind << "Exit" << '\n';
 		if(state[ind] != "") {
 			if(inRoom[ind] != -1) {
@@ -666,6 +686,8 @@ public:
 
 	Connection() {
 		memset(loginNum, 0, sizeof(loginNum));
+		writeLoginNumber();
+		
 		addr.sin_family = AF_INET;
 		addr.sin_addr.s_addr = INADDR_ANY;
 		addr.sin_port = htons(PORT);
@@ -829,6 +851,8 @@ private:
 int main(int argc, char** argv) {
 
 	PORT = 8888;
+	Aws::SDKOptions options;
+	Aws::InitAPI(options);
 	
 	Connection lol;
 
