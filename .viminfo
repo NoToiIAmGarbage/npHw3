@@ -11,24 +11,44 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/updateLogin
+~MSle0~/process_status
 
 # Last Substitute String:
 $
 
 # Command Line History (newest to oldest):
 :wq
-|2,0,1671023085,,"wq"
+|2,0,1671093135,,"wq"
+:q
+|2,0,1671090680,,"q"
 :w
-|2,0,1671021963,,"w"
+|2,0,1671089799,,"w"
+:w !sudo tee
+|2,0,1671032238,,"w !sudo tee"
+:w !sudo
+|2,0,1671032224,,"w !sudo"
+:w !sudo tee %
+|2,0,1671032202,,"w !sudo tee %"
+:!
+|2,0,1671032167,,"!"
+:wq!
+|2,0,1671032141,,"wq!"
+:w!
+|2,0,1671032133,,"w!"
+:fw
+|2,0,1671032111,,"fw"
+:!q
+|2,0,1671032107,,"!q"
+:!w
+|2,0,1671032097,,"!w"
+:!wq
+|2,0,1671032092,,"!wq"
 :631
 |2,0,1671021853,,"631"
 :155
 |2,0,1671021145,,"155"
 :151
 |2,0,1671020875,,"151"
-:q
-|2,0,1671020856,,"q"
 :set tabstop=4
 |2,0,1671009502,,"set tabstop=4"
 :5
@@ -39,8 +59,6 @@ $
 |2,0,1671009317,,"set nu"
 :300
 |2,0,1671008537,,"300"
-:!q
-|2,0,1671007531,,"!q"
 :Q
 |2,0,1671007526,,"Q"
 :~/.vimrc
@@ -63,18 +81,36 @@ $
 |2,0,1670945466,,"fq"
 
 # Search String History (newest to oldest):
+?/process_status
+|2,1,1671093123,47,"process_status"
+?/process_exit
+|2,1,1671092817,47,"process_exit"
+?/ObjectCon
+|2,1,1671092494,47,"ObjectCon"
+?/process_login
+|2,1,1671091913,47,"process_login"
+?/login
+|2,1,1671091906,47,"login"
+?/Game ends
+|2,1,1671090560,47,"Game ends"
+?/cout
+|2,1,1671090445,47,"cout"
+?/stage
+|2,1,1671090206,47,"stage"
+?/guess
+|2,1,1671089329,47,"guess"
+?/loginNum
+|2,1,1671033227,47,"loginNum"
+?/loginNum[
+|2,1,1671025369,47,"loginNum["
 ?/process_stat
 |2,1,1671023084,47,"process_stat"
-?/process_status
-|2,1,1671023069,47,"process_status"
 ?/updateLogin
 |2,1,1671023051,47,"updateLogin"
 ?/updateLog
 |2,1,1671023044,47,"updateLog"
 ? @$
 |2,1,1671020852,,"@$"
-?/loginNum
-|2,1,1671009689,47,"loginNum"
 ?/update
 |2,1,1671009445,47,"update"
 ?/outcome
@@ -92,322 +128,274 @@ $
 
 # Registers:
 "0	LINE	0
-	g++ -std=c++17 server.cpp -o ./build/server
-|3,0,0,1,1,0,1671020852,"g++ -std=c++17 server.cpp -o ./build/server"
-"1	LINE	0
-			s3_client.PutObject(request);
-|3,0,1,1,1,0,1671020961,"		s3_client.PutObject(request);"
+				for(int x : r.member) {
+					sendMes(m, x);
+				}
+				if(r.cur == r.member.size()) {
+|3,0,0,1,4,0,1671089392,"			for(int x : r.member) {","				sendMes(m, x);","			}","			if(r.cur == r.member.size()) {"
+""1	LINE	0
+			// cerr << "Clients" << ind << "Exit" << '\n';
+			if(state[ind] != "") {
+|3,1,1,1,2,0,1671092822,"		// cerr << \"Clients\" << ind << \"Exit\" << '\\n';","		if(state[ind] != \"\") {"
 "2	LINE	0
-	g++ -std=c++17 server.cpp -o ./build/server
-|3,0,2,1,1,0,1671020786,"g++ -std=c++17 server.cpp -o ./build/server"
+			writeLoginNumber();
+|3,0,2,1,1,0,1671092822,"		writeLoginNumber();"
 "3	LINE	0
-	793
-<		Aws::S3::Model::GetObjectOutcome outcome =                                                                                                  client.GetObject(request);                                                                                                                                                                                                                          Aws::IOStream& body = outcome.GetResult().GetBody();                                                                                                                                                                                                            for(int i = 0; i < 3; i ++) {                                                                                                           body >> logi
-|3,0,3,1,1,0,1671010995,>792
-|<"		Aws::S3::Model::GetObjectOutcome outcome =                                                                                                  client.GetObject(request);                                                                                                                                                                                                                          Aws::IOStream& body = outcome.GetResult().GetBody();                                                    
-|<                                                                                                                                                        for(int i = 0; i < 3; i ++) {                                                                                                           body >> logi"
+			loginNum[0] --;
+|3,0,3,1,1,0,1671092821,"		loginNum[0] --;"
 "4	LINE	0
-	
-|3,0,4,1,1,0,1671010582,""
+			updateLoginNumber();
+|3,0,4,1,1,0,1671092821,"		updateLoginNumber();"
 "5	LINE	0
-	    }
-|3,0,5,1,1,0,1671010582,"    }"
+			cout << objectContent << '\n';
+|3,0,5,1,1,0,1671090439,"		cout << objectContent << '\\n';"
 "6	LINE	0
-	                  << objectContent << "' uploaded to bucket '" << bucketName << "'.";
-|3,0,6,1,1,0,1671010581,"                  << objectContent << \"' uploaded to bucket '\" << bucketName << \"'.\";"
+			cout << "stage 4" << '\n';
+|3,0,6,1,1,0,1671090211,"		cout << \"stage 4\" << '\\n';"
 "7	LINE	0
-	        std::cout << "Success: Object '" << objectName << "' with content '"
-|3,0,7,1,1,0,1671010581,"        std::cout << \"Success: Object '\" << objectName << \"' with content '\""
+			cout << "stage 3" << '\n';
+|3,0,7,1,1,0,1671090210,"		cout << \"stage 3\" << '\\n';"
 "8	LINE	0
-	    else {
-|3,0,8,1,1,0,1671010580,"    else {"
+			cout << "stage 2" << '\n';
+|3,0,8,1,1,0,1671090209,"		cout << \"stage 2\" << '\\n';"
 "9	LINE	0
-	    }
-|3,0,9,1,1,0,1671010580,"    }"
-""-	CHAR	0
-	c
-|3,1,36,0,1,0,1671021041,"c"
+			cout << "stage 1" << '\n';
+|3,0,9,1,1,0,1671090208,"		cout << \"stage 1\" << '\\n';"
+"-	CHAR	0
+		
+|3,0,36,0,1,0,1671089427,"	"
 
 # File marks:
-'0  119  0  ~/server.cpp
-|4,48,119,0,1671023085,"~/server.cpp"
-'1  124  6  ~/server.cpp
-|4,49,124,6,1671023070,"~/server.cpp"
-'2  124  6  ~/server.cpp
-|4,50,124,6,1671023070,"~/server.cpp"
-'3  1  0  ~/server.cpp
-|4,51,1,0,1671021317,"~/server.cpp"
-'4  1  0  ~/server.cpp
-|4,52,1,0,1671021317,"~/server.cpp"
-'5  151  16  ~/server.cpp
-|4,53,151,16,1671021125,"~/server.cpp"
-'6  151  16  ~/server.cpp
-|4,54,151,16,1671021125,"~/server.cpp"
-'7  151  16  ~/server.cpp
-|4,55,151,16,1671021125,"~/server.cpp"
-'8  151  16  ~/server.cpp
-|4,56,151,16,1671021125,"~/server.cpp"
-'9  151  16  ~/server.cpp
-|4,57,151,16,1671021125,"~/server.cpp"
+'0  585  21  ~/server.cpp
+|4,48,585,21,1671093135,"~/server.cpp"
+'1  691  21  ~/server.cpp
+|4,49,691,21,1671092852,"~/server.cpp"
+'2  690  21  ~/server.cpp
+|4,50,690,21,1671092852,"~/server.cpp"
+'3  152  10  ~/server.cpp
+|4,51,152,10,1671092498,"~/server.cpp"
+'4  152  10  ~/server.cpp
+|4,52,152,10,1671092498,"~/server.cpp"
+'5  152  10  ~/server.cpp
+|4,53,152,10,1671092498,"~/server.cpp"
+'6  152  10  ~/server.cpp
+|4,54,152,10,1671092498,"~/server.cpp"
+'7  152  31  ~/server.cpp
+|4,55,152,31,1671092425,"~/server.cpp"
+'8  152  31  ~/server.cpp
+|4,56,152,31,1671092425,"~/server.cpp"
+'9  152  31  ~/server.cpp
+|4,57,152,31,1671092425,"~/server.cpp"
 
 # Jumplist (newest first):
--'  119  0  ~/server.cpp
-|4,39,119,0,1671023085,"~/server.cpp"
--'  124  6  ~/server.cpp
-|4,39,124,6,1671023078,"~/server.cpp"
--'  124  6  ~/server.cpp
-|4,39,124,6,1671023070,"~/server.cpp"
--'  650  2  ~/server.cpp
-|4,39,650,2,1671023057,"~/server.cpp"
--'  650  2  ~/server.cpp
-|4,39,650,2,1671023057,"~/server.cpp"
--'  218  2  ~/server.cpp
-|4,39,218,2,1671023056,"~/server.cpp"
--'  200  2  ~/server.cpp
-|4,39,200,2,1671023056,"~/server.cpp"
--'  218  2  ~/server.cpp
-|4,39,218,2,1671023056,"~/server.cpp"
--'  200  2  ~/server.cpp
-|4,39,200,2,1671023056,"~/server.cpp"
--'  527  9  ~/server.cpp
-|4,39,527,9,1671023044,"~/server.cpp"
--'  527  9  ~/server.cpp
-|4,39,527,9,1671023044,"~/server.cpp"
--'  639  18  ~/server.cpp
-|4,39,639,18,1671021847,"~/server.cpp"
--'  639  18  ~/server.cpp
-|4,39,639,18,1671021847,"~/server.cpp"
--'  1  0  ~/server.cpp
-|4,39,1,0,1671021317,"~/server.cpp"
--'  1  0  ~/server.cpp
-|4,39,1,0,1671021317,"~/server.cpp"
--'  151  16  ~/server.cpp
-|4,39,151,16,1671021144,"~/server.cpp"
--'  151  16  ~/server.cpp
-|4,39,151,16,1671021144,"~/server.cpp"
--'  151  16  ~/server.cpp
-|4,39,151,16,1671021125,"~/server.cpp"
--'  151  16  ~/server.cpp
-|4,39,151,16,1671021125,"~/server.cpp"
--'  151  108  ~/server.cpp
-|4,39,151,108,1671021006,"~/server.cpp"
--'  149  7  ~/server.cpp
-|4,39,149,7,1671020922,"~/server.cpp"
--'  149  7  ~/server.cpp
-|4,39,149,7,1671020922,"~/server.cpp"
--'  149  7  ~/server.cpp
-|4,39,149,7,1671020922,"~/server.cpp"
--'  149  7  ~/server.cpp
-|4,39,149,7,1671020922,"~/server.cpp"
--'  149  7  ~/server.cpp
-|4,39,149,7,1671020922,"~/server.cpp"
--'  149  7  ~/server.cpp
-|4,39,149,7,1671020900,"~/server.cpp"
--'  189  1  ~/server.cpp
-|4,39,189,1,1671020872,"~/server.cpp"
--'  189  1  ~/server.cpp
-|4,39,189,1,1671020872,"~/server.cpp"
--'  189  1  ~/server.cpp
-|4,39,189,1,1671020872,"~/server.cpp"
--'  189  1  ~/server.cpp
-|4,39,189,1,1671020872,"~/server.cpp"
--'  189  1  ~/server.cpp
-|4,39,189,1,1671020872,"~/server.cpp"
--'  189  1  ~/server.cpp
-|4,39,189,1,1671020872,"~/server.cpp"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  3  ~/build.sh
-|4,39,8,3,1671020868,"~/build.sh"
--'  8  0  ~/build
-|4,39,8,0,1671020856,"~/build"
--'  8  0  ~/build
-|4,39,8,0,1671020856,"~/build"
--'  8  0  ~/build
-|4,39,8,0,1671020856,"~/build"
--'  8  0  ~/build
-|4,39,8,0,1671020856,"~/build"
--'  8  0  ~/build
-|4,39,8,0,1671020856,"~/build"
--'  8  0  ~/build
-|4,39,8,0,1671020856,"~/build"
--'  8  0  ~/build
-|4,39,8,0,1671020856,"~/build"
--'  8  0  ~/build
-|4,39,8,0,1671020856,"~/build"
--'  8  0  ~/build
-|4,39,8,0,1671020856,"~/build"
--'  8  0  ~/build
-|4,39,8,0,1671020856,"~/build"
--'  8  0  ~/build
-|4,39,8,0,1671020856,"~/build"
--'  8  0  ~/build
-|4,39,8,0,1671020856,"~/build"
--'  8  0  ~/build
-|4,39,8,0,1671020856,"~/build"
--'  8  0  ~/build
-|4,39,8,0,1671020856,"~/build"
--'  8  0  ~/build
-|4,39,8,0,1671020856,"~/build"
--'  8  0  ~/build
-|4,39,8,0,1671020856,"~/build"
--'  8  0  ~/build
-|4,39,8,0,1671020856,"~/build"
--'  8  0  ~/build
-|4,39,8,0,1671020856,"~/build"
--'  8  0  ~/build
-|4,39,8,0,1671020856,"~/build"
--'  8  0  ~/build
-|4,39,8,0,1671020856,"~/build"
+-'  585  21  ~/server.cpp
+|4,39,585,21,1671093135,"~/server.cpp"
+-'  691  21  ~/server.cpp
+|4,39,691,21,1671093123,"~/server.cpp"
+-'  690  21  ~/server.cpp
+|4,39,690,21,1671092852,"~/server.cpp"
+-'  671  3  ~/server.cpp
+|4,39,671,3,1671092824,"~/server.cpp"
+-'  670  3  ~/server.cpp
+|4,39,670,3,1671092824,"~/server.cpp"
+-'  645  3  ~/server.cpp
+|4,39,645,3,1671092818,"~/server.cpp"
+-'  644  3  ~/server.cpp
+|4,39,644,3,1671092818,"~/server.cpp"
+-'  152  10  ~/server.cpp
+|4,39,152,10,1671092817,"~/server.cpp"
+-'  152  10  ~/server.cpp
+|4,39,152,10,1671092817,"~/server.cpp"
+-'  152  10  ~/server.cpp
+|4,39,152,10,1671092498,"~/server.cpp"
+-'  152  31  ~/server.cpp
+|4,39,152,31,1671092425,"~/server.cpp"
+-'  612  3  ~/server.cpp
+|4,39,612,3,1671091913,"~/server.cpp"
+-'  611  17  ~/server.cpp
+|4,39,611,17,1671091913,"~/server.cpp"
+-'  611  3  ~/server.cpp
+|4,39,611,3,1671091913,"~/server.cpp"
+-'  610  17  ~/server.cpp
+|4,39,610,17,1671091913,"~/server.cpp"
+-'  611  3  ~/server.cpp
+|4,39,611,3,1671091913,"~/server.cpp"
+-'  610  17  ~/server.cpp
+|4,39,610,17,1671091913,"~/server.cpp"
+-'  611  3  ~/server.cpp
+|4,39,611,3,1671091913,"~/server.cpp"
+-'  610  17  ~/server.cpp
+|4,39,610,17,1671091913,"~/server.cpp"
+-'  588  57  ~/server.cpp
+|4,39,588,57,1671091907,"~/server.cpp"
+-'  587  57  ~/server.cpp
+|4,39,587,57,1671091907,"~/server.cpp"
+-'  587  57  ~/server.cpp
+|4,39,587,57,1671091907,"~/server.cpp"
+-'  587  57  ~/server.cpp
+|4,39,587,57,1671091907,"~/server.cpp"
+-'  570  27  ~/server.cpp
+|4,39,570,27,1671091906,"~/server.cpp"
+-'  570  27  ~/server.cpp
+|4,39,570,27,1671091906,"~/server.cpp"
+-'  570  27  ~/server.cpp
+|4,39,570,27,1671091906,"~/server.cpp"
+-'  570  27  ~/server.cpp
+|4,39,570,27,1671091906,"~/server.cpp"
+-'  571  26  ~/server.cpp
+|4,39,571,26,1671091900,"~/server.cpp"
+-'  571  26  ~/server.cpp
+|4,39,571,26,1671091900,"~/server.cpp"
+-'  571  26  ~/server.cpp
+|4,39,571,26,1671091900,"~/server.cpp"
+-'  571  26  ~/server.cpp
+|4,39,571,26,1671091900,"~/server.cpp"
+-'  570  26  ~/server.cpp
+|4,39,570,26,1671090680,"~/server.cpp"
+-'  570  26  ~/server.cpp
+|4,39,570,26,1671090604,"~/server.cpp"
+-'  154  2  ~/server.cpp
+|4,39,154,2,1671090560,"~/server.cpp"
+-'  153  2  ~/server.cpp
+|4,39,153,2,1671090560,"~/server.cpp"
+-'  154  2  ~/server.cpp
+|4,39,154,2,1671090560,"~/server.cpp"
+-'  153  2  ~/server.cpp
+|4,39,153,2,1671090560,"~/server.cpp"
+-'  154  2  ~/server.cpp
+|4,39,154,2,1671090560,"~/server.cpp"
+-'  153  2  ~/server.cpp
+|4,39,153,2,1671090560,"~/server.cpp"
+-'  154  2  ~/server.cpp
+|4,39,154,2,1671090560,"~/server.cpp"
+-'  153  2  ~/server.cpp
+|4,39,153,2,1671090560,"~/server.cpp"
+-'  153  2  ~/server.cpp
+|4,39,153,2,1671090560,"~/server.cpp"
+-'  152  2  ~/server.cpp
+|4,39,152,2,1671090539,"~/server.cpp"
+-'  152  2  ~/server.cpp
+|4,39,152,2,1671090539,"~/server.cpp"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
+-'  1  0  ~/client.py
+|4,39,1,0,1671090462,"~/client.py"
 
 # History of marks within files (newest to oldest):
 
 > ~/server.cpp
-	*	1671023084	0
-	"	119	0
-	^	582	20
-	.	582	19
-	+	1	0
-	+	117	3187
-	+	116	6
-	+	116	7
-	+	117	3331
-	+	117	3330
-	+	117	45
-	+	117	0
-	+	117	3184
-	+	117	0
-	+	117	3185
-	+	150	0
-	+	117	16
-	+	119	1
-	+	117	22
-	+	119	2
-	+	833	0
-	+	832	16
-	+	681	39
-	+	673	5
-	+	119	27
-	+	118	36
-	+	120	43
-	+	123	2
-	+	125	39
-	+	123	0
-	+	126	0
-	+	127	3
-	+	127	54
-	+	130	22
-	+	133	0
-	+	132	0
-	+	135	1691
-	+	135	1693
-	+	135	26
-	+	136	37
-	+	137	30
-	+	138	0
-	+	135	25
-	+	139	35
-	+	140	33
-	+	141	0
-	+	141	790
-	+	141	1
-	+	149	0
-	+	146	14
-	+	146	12
-	+	145	34
-	+	145	31
+	*	1671093135	0
+	"	585	21
+	^	585	22
+	.	586	0
 	+	146	12
 	+	146	38
 	+	149	8
@@ -425,25 +413,99 @@ $
 	+	203	0
 	+	202	20
 	+	220	20
-	+	640	2
-	+	641	0
-	+	640	20
-	+	652	20
-	+	687	15
-	+	688	0
-	+	691	0
-	+	689	20
-	+	854	25
-	+	855	0
-	+	861	19
-	+	639	17
-	+	577	31
-	+	578	13
-	+	580	2
+	+	648	2
+	+	649	0
+	+	648	20
+	+	660	20
+	+	695	15
+	+	696	0
+	+	699	0
+	+	697	20
+	+	862	25
+	+	863	0
+	+	869	19
+	+	647	17
+	+	591	31
+	+	591	13
+	+	591	2
+	+	591	0
+	+	591	77
+	+	591	3
+	+	591	19
+	+	201	11
+	+	219	11
+	+	660	11
+	+	199	0
+	+	199	26
+	+	200	18
+	+	199	18
+	+	200	27
+	+	201	27
+	+	199	0
+	+	200	17
+	+	201	17
+	+	202	21
+	+	203	27
+	+	591	0
+	+	563	4
+	+	577	0
+	+	563	3
+	+	563	7
+	+	563	34
+	+	563	50
+	+	563	3
+	+	563	0
+	+	563	3
+	+	576	3
+	+	580	0
+	+	577	3
+	+	571	4
+	+	572	0
+	+	571	52
+	+	578	4
+	+	579	0
+	+	578	18
+	+	591	0
+	+	570	0
+	+	569	10
+	+	570	0
+	+	564	7
+	+	570	4
+	+	571	4
+	+	572	6
+	+	574	0
+	+	568	0
+	+	566	5
+	+	567	0
+	+	566	19
+	+	573	22
+	+	591	0
 	+	581	0
-	+	580	77
-	+	581	3
-	+	582	19
+	+	582	0
+	+	581	2
+	+	575	0
+	+	200	0
+	+	201	0
+	+	202	0
+	+	203	0
+	+	152	1
+	+	153	0
+	+	152	10
+	+	660	0
+	+	658	0
+	+	692	0
+	+	586	0
+
+> ~/client.py
+	*	1671090461	0
+	"	1	0
+
+> /etc/ld.so.conf
+	*	1671032247	0
+	"	2	0
+	^	2	14
+	.	2	0
+	+	2	0
 
 > ~/build.sh
 	*	1671020867	0

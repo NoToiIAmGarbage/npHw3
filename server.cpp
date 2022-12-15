@@ -198,7 +198,7 @@ public:
 		state[ind] = comm[1];
 		user2state[comm[1]] = ind;
 		updateLoginNumber();
-		loginNum[1] ++;
+		loginNum[0] ++;
 		writeLoginNumber();
 	}
 
@@ -216,7 +216,7 @@ public:
 		user2state[state[ind]] = -1;
 		state[ind] = "";
 		updateLoginNumber();
-		loginNum[1] --;
+		loginNum[0] --;
 		writeLoginNumber();
 	}
 
@@ -558,23 +558,31 @@ public:
 		}
 		else {
 			string m = name + " guess \'" + comm[1] + "\' and got " + "\'" + to_string(res.first) + "A" + to_string(res.second) + "B\'";
-			for(int x : r.member) {
-				sendMes(m, x);
-			}
 			r.cur ++;
 			if(r.cur == r.member.size()) {
 				r.cur = 0; r.round --;
-				if(!r.round) {
+				if(r.round) {
 					for(int x : r.member) {
-						sendMes("Game ends, no one wins", x);
+						sendMes(m, x);
+					}
+				}
+				else {
+					for(int x : r.member) {
+						sendMes(m + '\n' + "Game ends, no one wins", x);
 					}
 					r.started = false;
+				}
+			}
+			else {
+				for(int x : r.member) {
+					sendMes(m, x);
 				}
 			}
 		}
 	}
 
 	void process_status(int ind) {
+		updateLoginNumber();
 		string res;
 		for(int i = 0; i < 3; i ++) {
 			res += "Server" + to_string(i + 1) + ": " + to_string(loginNum[i]) + '\n';
@@ -647,9 +655,6 @@ public:
 	void process_exit(int ind) {
 		close(clients[ind]);
 		clients[ind] = -1;
-		updateLoginNumber();
-		loginNum[1] --;
-		writeLoginNumber();
 		// cerr << "Clients" << ind << "Exit" << '\n';
 		if(state[ind] != "") {
 			if(inRoom[ind] != -1) {
@@ -681,6 +686,9 @@ public:
 			}
 			user2state[state[ind]] = -1;
 			state[ind] = "";
+			updateLoginNumber();
+			loginNum[0] --;
+			writeLoginNumber();
 		}
 	}
 
